@@ -1,0 +1,15 @@
+.contenedor{
+    display: flex;
+}
+.Links{
+    text-decoration: none;
+    color: black;
+}
+
+.Links:hover{
+    text-decoration: underline;
+}
+
+.Actual{
+    color: rgb(119, 126, 126);
+}
