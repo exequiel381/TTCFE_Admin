@@ -1,7 +1,8 @@
 import React from "react";
 import "./Main.css";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Cell from "./Cell";
+import { Button } from "@mui/material";
 
 export default function Row({
   tableId,
@@ -126,27 +127,19 @@ export default function Row({
       })}
       {iconButtons !== undefined ? (
         iconButtons.map((iconButton, index) => {
-          var buttonClass =
-            iconButton.type === "danger"
-              ? "sdds-btn sdds-btn-danger " +
-                (iconButton.size ? "sdds-btn-" + iconButton.size : "")
-              : iconButton.type === "secondary"
-              ? "sdds-btn sdds-btn-secondary " +
-                (iconButton.size ? "sdds-btn-" + iconButton.size : "")
-              : "sdds-btn sdds-btn-primary " +
-                (iconButton.size ? "sdds-btn-" + iconButton.size : "");
           return (
             <td style={{ width: "1px" }} key={index} align="center">
-              <button
-                style={{ margin: -3 }}
+              <Button
+                sx={{ height: "50px" }}
+                color={iconButton.color ? iconButton.color : "primary"}
+                variant="contained"
                 onClick={(e) => {
                   e.preventDefault();
                   iconButton.behaviour(dataRow[idColumn], dataRow[idColumn2]);
                 }}
-                className={buttonClass + " wrap-text"}
               >
-                {/* <FontAwesomeIcon icon={iconButton.icon} /> */}
-              </button>
+                <FontAwesomeIcon icon={iconButton.icon} />
+              </Button>
             </td>
           );
         })
