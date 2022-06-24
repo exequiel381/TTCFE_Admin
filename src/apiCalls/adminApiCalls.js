@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const rootApiPath = "https://localhost:44373/api/Veterinaria/";
+const rootApiPath = "https://localhost:44373/api/Pedido/";
 
 export const getPedidos = async () => {
   try {
