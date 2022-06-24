@@ -18,7 +18,10 @@ const style = {
   p: 4,
 };
 const ModalComponent = (props) => {
-  const handleClose = () => props.setOpen(false);
+  const handleClose = () =>
+    props.setModalProps({
+      openModal: false,
+    });
   return (
     <Modal
       keepMounted

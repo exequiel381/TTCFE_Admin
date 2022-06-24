@@ -9,11 +9,12 @@ import Admin from "./pages/admin/admin";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<Admin />}></Route>
-      </Routes>
-    </Router>
+    <Admin />
+    // <Router>
+    //   <Routes>
+    //     <Route exact path="/" element={}></Route>
+    //   </Routes>
+    // </Router>
   );
 }
 
